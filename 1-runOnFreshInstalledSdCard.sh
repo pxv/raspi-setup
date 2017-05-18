@@ -20,6 +20,13 @@ cp -p config.txt.original config.txt
 echo "" >> config.txt
 echo "# pxv: Part of allowing USB access to OS" >> config.txt
 echo "dtoverlay=dwc2" >> config.txt
+# set up sreen resolution
+echo "\n# pxv: set new resolutions when running headless (1024x768@60Hz, 47=1440x900@60Hz)"
+echo "hdmi_force_hotplug=1" >> config.txt
+echo "hdmi_group=2" >> config.txt
+echo "hdmi_mode=47" >> config.txt
+
+
 
 # make a backup in case we need to redo the command
 if [ ! -f ./cmdline.txt.original ]
